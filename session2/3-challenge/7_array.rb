@@ -9,3 +9,17 @@
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
 
+class String
+def remove
+  removed = self.gsub(/[!@$#%^&*()-=_+\[\]:;,.\/<>?\|]/, ' ').squeeze(" ")
+  end
+end
+
+def alternate_words(string)
+ary = []
+  word_ary = string.remove.split(/ /)
+word_ary.each_index do |idx|
+  ary.push(word_ary[idx]) if idx.even?
+end
+ary
+end
