@@ -5,5 +5,10 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
-
-end
+  arrr = ""
+  string.split(//).each_index do |index|
+    if /[Rr]/.match(string[index]) then arrr << string[index + 1] unless string[index + 1] == nil
+    end
+    end
+    arrr
+    end
